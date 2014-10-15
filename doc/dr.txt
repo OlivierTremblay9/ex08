@@ -1,0 +1,8 @@
+ex08
+
+Ajoutez README.md.
+
+Il faut pas utiliser ..
+import '../lib/funct.dart';
+
+Il faut utiliser package ex08.
