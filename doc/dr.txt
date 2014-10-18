@@ -1,5 +1,22 @@
 ex08
 
+Sort the list of members of a given association first by the last name, 
+then by the first name.
+
+Trier la liste des membres d'une association par le nom de famille, puis par le prénom.
+                           -----------------
+List association(List members)
+-->
+List association(String associationName)
+
+var letters = "T"; 
+-->
+var letter = "T"; 
+
+---
+
+OK
+
 Ajoutez README.md.
 
 Il faut pas utiliser ..
