@@ -65,3 +65,25 @@ library funct;
     return returnList; 
   } 
 
+  
+  var members = [ 
+           {"associationName": "IS", "firstName": "Roger", "lastName": "Bouchard", "email": "robou@gmail.com"}, 
+           {"associationName": "CS", "firstName": "Olivier", "lastName": "Tremblay", "email": "oltrem@gmail.com"}, 
+           {"associationName": "CS", "firstName": "Samuel", "lastName": "Tremblay", "email": "satrem@gmail.com"}, 
+           {"associationName": "IS", "firstName": "Léa", "lastName": "Tremblay", "email": "letrem@gmail.com"}, 
+           {"associationName": "CS", "firstName": "David", "lastName": "Julien", "email": "dajul@gmail.com"}, 
+           {"associationName": "IS", "firstName": "Eliane", "lastName": "Tremblay", "email": "eltrem@gmail.com"}, 
+           {"associationName": "CS", "firstName": "Julie", "lastName": "Simard", "email": "jusim@gmail.com"}, 
+           {"associationName": "CS", "firstName": "Simon", "lastName": "Fournier", "email": "sifour@gmail.com"} 
+      ]; 
+
+
+  printRow(var row){
+    for(var n in row){
+    print(n);
+    }
+  }
+  
+  
+  
+  
