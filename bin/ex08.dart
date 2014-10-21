@@ -2,10 +2,21 @@ import 'package:ex08/funct.dart';
 
 void ex08_1(){ 
   
-
-  var result_part_1 = ('${association(members)}\n');
+  var associationmembers = [ 
+             {"associationName": "IS", "firstName": "Roger", "lastName": "Bouchard", "email": "robou@gmail.com\n"}, 
+             {"associationName": "CS", "firstName": "Olivier", "lastName": "Tremblay", "email": "oltrem@gmail.com\n"}, 
+             {"associationName": "CS", "firstName": "Samuel", "lastName": "Tremblay", "email": "satrem@gmail.com\n"}, 
+             {"associationName": "IS", "firstName": "Léa", "lastName": "Tremblay", "email": "letrem@gmail.com\n"}, 
+             {"associationName": "CS", "firstName": "David", "lastName": "Julien", "email": "dajul@gmail.com\n"}, 
+             {"associationName": "IS", "firstName": "Eliane", "lastName": "Tremblay", "email": "eltrem@gmail.com\n"}, 
+             {"associationName": "CS", "firstName": "Julie", "lastName": "Simard", "email": "jusim@gmail.com\n"}, 
+             {"associationName": "CS", "firstName": "Simon", "lastName": "Fournier", "email": "sifour@gmail.com\n"}
+             ];
+  var result_part_1 = ('${association(associationmembers)}\n');
   var letter = "T";
-  var result_part_2 = getMembersLastNameBeginsWith(members, ('${letter}'));
+  var result_part_2 = beginwith(associationmembers, ('${letter}'));
+  
+       
   
   print('\n******************************************QUESTION_1:*********************************************\n'); 
   print('''Part_1: Create a list of associations of members, where a member is represented as a map with 
@@ -16,8 +27,8 @@ void ex08_1(){
   print('''Part_2: Provide a way to obtain only members of all associations whose last name starts with 
          a given letter.''');
   print('\n        Associations whose last name starts with: [ $letter ]\nAnswer:\n\n$result_part_2');
+  
 
-     
 }
 
 

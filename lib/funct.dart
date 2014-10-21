@@ -1,15 +1,15 @@
 library funct;
 
 
- List association(List members) {  //For exercice #1. This code was inspired by: https://github.com/leduy10/ex08.git
+ List association(List associationmembers) {  //For exercice #1. This code was inspired by: https://github.com/leduy10/ex08.git
      
     List answer = new List(); 
-    Map sort = members.elementAt(0); 
+    Map sort = associationmembers.elementAt(0); 
     answer.add(sort); 
      
-    for (int n = 1; n < members.length; n++) { 
+    for (int n = 1; n < associationmembers.length; n++) { 
       bool inserted = false; 
-      sort = members.elementAt(n); 
+      sort = associationmembers.elementAt(n); 
       String lastName = sort["lastName"]; 
       String firstName = sort["firstName"]; 
       
@@ -50,20 +50,23 @@ library funct;
   } 
   
   
-  List getMembersLastNameBeginsWith(List members, String letter) { 
+  List beginwith(List members, String letter) { 
      
     List returnList = new List(); 
      
     for (int i = 0; i < members.length; i++) { 
-      Map pointer = members.elementAt(i); 
-      String lastName = pointer["lastName"]; 
+      Map sort = members.elementAt(i); 
+      String lastName = sort["lastName"]; 
       if(lastName.substring(0, 1) == letter) { 
-        returnList.add(pointer); 
+        returnList.add(sort); 
       } 
     } 
      
     return returnList; 
   } 
+  
+ 
+
 
   
   var members = [ 
