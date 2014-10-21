@@ -64,11 +64,7 @@ library funct;
      
     return returnList; 
   } 
-  
- 
 
-
-  
   var members = [ 
            {"associationName": "IS", "firstName": "Roger", "lastName": "Bouchard", "email": "robou@gmail.com"}, 
            {"associationName": "CS", "firstName": "Olivier", "lastName": "Tremblay", "email": "oltrem@gmail.com"}, 
