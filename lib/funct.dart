@@ -65,24 +65,91 @@ library funct;
     return returnList; 
   } 
 
-  var members = [ 
-           {"associationName": "IS", "firstName": "Roger", "lastName": "Bouchard", "email": "robou@gmail.com"}, 
-           {"associationName": "CS", "firstName": "Olivier", "lastName": "Tremblay", "email": "oltrem@gmail.com"}, 
-           {"associationName": "CS", "firstName": "Samuel", "lastName": "Tremblay", "email": "satrem@gmail.com"}, 
-           {"associationName": "IS", "firstName": "Léa", "lastName": "Tremblay", "email": "letrem@gmail.com"}, 
-           {"associationName": "CS", "firstName": "David", "lastName": "Julien", "email": "dajul@gmail.com"}, 
-           {"associationName": "IS", "firstName": "Eliane", "lastName": "Tremblay", "email": "eltrem@gmail.com"}, 
-           {"associationName": "CS", "firstName": "Julie", "lastName": "Simard", "email": "jusim@gmail.com"}, 
-           {"associationName": "CS", "firstName": "Simon", "lastName": "Fournier", "email": "sifour@gmail.com"} 
-      ]; 
+  //Question 2-----This code was inspired by: https://github.com/etdeschenes/ex08.git
+  
+  class Association { 
+     String partie_code; 
+     String partie_name; 
+     String description; 
+     var association_member = new List(); 
+   
+   
+     Association(String this.partie_code,  
+                 String this.partie_name,  
+                 String this.description); 
+   
+   
+     String toString() { 
+       return '{\n' 'Association: \n' 
+              'Political party code : ${partie_code}\n' 
+              'Party name : ${partie_name}\n' 
+              'Association description : ${description}\n' 
+              '}\n'; 
+   } 
+ 
+               
+   addMember(Member member) { 
+     association_member.add(member);
+   
+   } 
+ 
+               
+   deleteMember(String email) { 
+     for (var n = 0; n < association_member.length; n++) { 
+       if (association_member[n].email == email) { 
+         association_member.removeAt(n); 
+      } 
+     } 
+   } 
+ 
+               
+   editMember(String partie_code, String firstName, String lastName, String email) { 
+     for (var n = 0; n < association_member.length; n++) { 
+       if (association_member[n]["firstName"] == firstName && association_member[n]["lastName"] == lastName) { 
+           association_member[n]["associationCode"] = partie_code; 
+           association_member[n]["firstName"] = firstName; 
+           association_member[n]["lastName"] = lastName; 
+           association_member[n]["email"] = email; 
+      } 
+     } 
+   } 
+ } 
 
-
-  printRow(var row){
-    for(var n in row){
-    print(n);
-    }
-  }
-  
-  
-  
+  class Member { 
+   String partie_code; 
+   String firstName; 
+   String lastName; 
+   String email; 
+   var memberList = new List(); 
+ 
+   
+   Member(String this.partie_code,  
+          String this.firstName,  
+          String this.lastName,  
+          String this.email); 
+ 
+   
+   String toString() { 
+     return '{\n' 'Member \n' 
+            '  Partie code : ${partie_code} \n' 
+            '  firstName: ${firstName}\n' 
+            '  lastName: ${lastName}\n' 
+            '  email: ${email}\n' 
+            '}\n'; 
+   } 
+ 
+   
+   addAssociation(Association association) { 
+      memberList.add(association); 
+   } 
+   
+   deleteAssociation(Association association) { 
+     for (var n = 0; n < memberList.length; n++) { 
+       if (memberList[n].partie_name == association.partie_name) { 
+           memberList.removeAt(n); 
+       } 
+     } 
+   } 
+ } 
+ 
   

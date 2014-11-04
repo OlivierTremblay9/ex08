@@ -35,75 +35,43 @@ void ex08_1(){
 void ex08_2(){
   
   print('\n******************************************QUESTION_2:*********************************************\n');
-  
-  test(var firstName, var lastName, var members){
-     for(var n in members){
-        if(n['firstName'] == firstName && n['lastName'] == lastName)
-        return true;
-     }
-     return false;
-   }
-  
-   additions(var associationName, var firstName, var lastName, var email, var members){
-       members.add({
-                    'associationName': associationName,
-                    'firstName': firstName,
-                    'lastName': lastName,
-                    'email': email, 
-                  });
-
-     firstNameSorting(var members){
-      members.sort((x, y) => x['lastName'].compareTo(y['firstName']));
-      print('\nAdd entity:\n');
-      printRow(members); 
-     }   
-     firstNameSorting(members);   
-   } 
-     additions('CS', 'Boucher', 'Lortis', 'bolor@gmail.com', members); 
-  
-   removal(var firstName, var lastName, var email, var members){     
-      for(var n = 0; n < members.length; n++){        
-       if(members[n]['firstName'] == firstName && members[n]['lastName'] == lastName && members[n]['email'] == email){
-         members.removeAt(n);
-       }
-      }
- 
-     firstNameSorting(var members){
-      members.sort((x, y) => x['lastName'].compareTo(y['firstName']));
-      print('\nRemove entity:\n'); 
-      printRow(members); 
-     }    
-     firstNameSorting(members);
-   } 
-     removal('Roger', 'Bouchard', 'robou@gmail.com', members);
    
-   update(var associationName, var firstName, var lastName, var email, var members){
-      for(var n = 0; n < members.length; n++){
-       if(members[n]['firstName'] == firstName && members[n]['lastName'] == lastName){
-           members[n]['associationName'] = associationName;
-           members[n]['firstName'] = firstName;
-           members[n]['lastName'] = lastName;
-           members[n]['email'] = email; 
-       }
-      }
-     
-     
-     firstNameSorting(var members){
-       members.sort((x, y) => x['lastName'].compareTo(y['firstName']));
-       print('\nUpdate entity:\n'); 
-       printRow(members);
-     }
-     firstNameSorting(members);
-   }
+  List partie_quebecois = new List(); 
+  
+   var partie1 = new Association("PQ", "Partie Québécois", "New PQ leadership candidate");   
+   var member1 = new Member("PQ", "Pierre Karl ", "Péladeau", "PKP@hotmail.com"); 
+    partie_quebecois.add(member1);
+   var member2 = new Member("PQ", "Bernard", "Drainville", "Bedr@hotmail.com");
+    partie_quebecois.add(member2);
+   var member3 = new Member("PQ", "Carole ", "Poirier", "capo@hotmail.com");  
+    partie_quebecois.add(member3);
+    
+  List partie_liberal = new List(); 
+  
+   var partie2 = new Association("PL", "Partie Libéral", "New PL leadership candidate"); 
+   var member4 = new Member("PL", "Philippe", "Couillard", "phco@hotmail.com");
+    partie_liberal.add(member4);
+   var member5 = new Member("PL", "François", "Blais", "frbl@hotmail.com");
+    partie_liberal.add(member5);   
+   var member6 = new Member("PL", "Carlos", "Leitao", "cale@hotmail.com.com"); 
+    partie_liberal.add(member6); 
+    partie1.addMember(member6); 
+    partie2.deleteMember('phco@hotmail.com'); //ne semble pas fonctionner??
+    partie2.editMember("PL", "Francois", "Blais", "frbl@gmail.com"); 
+    
+   print("#2 : Classe permettant d'ajouter, d'enlever ou de modifier un membre d'association."); 
+   print('$partie1 $partie_quebecois'); 
+   print(''); 
+   print('$partie2 $partie_liberal'); 
+ } 
 
-   update('IS', 'Eliane', 'Tremblay', ['eltrem@gmail.com','eltrem@hotmail.com'], members);
   
   
-}
+
 
 
 void main() {
   ex08_1();  //This code was inspired by: https://github.com/leduy10/ex08.git
-  ex08_2();  //This code was inspired by: https://github.com/alaincastonguay/ex08.git
+  ex08_2();  //This code was inspired by: https://github.com/etdeschenes/ex08.git
       
 }
