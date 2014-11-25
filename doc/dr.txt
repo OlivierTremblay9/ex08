@@ -1,5 +1,52 @@
 ex08
 
+16/20
+
+8.1
+-1
+ List association(List associationmembers)
+-->
+List association(List associationMembers)
+
+  List beginwith(List members, String letter) { 
+-->
+List beginWith(List members, String letter) { 
+
+voir https://www.dartlang.org/articles/style-guide/
+
+8.2
+-1
+  class Member { 
+   String partie_code;
+-->
+class Member { 
+  String partieCode;
+   
+-1
+class Association {
+  ...
+  var association_member = new List();
+   
+var association_member = new List(); ne devrait pas être dans cette classe; 
+devrait être dans une classe séparée
+var association_member = new List(); 
+-->
+var memberships = new Memberships(); 
+
+-1  
+class Member {
+  ...
+  var memberList = new List();
+  
+var memberList = new List(); ne devrait pas être dans cette classe; 
+devrait être dans une classe séparée 
+var memberList = new List();
+-->
+var memberships = new Memberships(); 
+
+
+---
+
 12/20
 
 ex08_1();  //This code was inspired by: https://github.com/leduy10/ex08.git
